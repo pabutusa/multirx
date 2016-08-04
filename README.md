@@ -12,10 +12,15 @@ structure. While HAM2MON is a great curses based app for monitoring ALL activity
 in a given bandwidth MULTIRX was designed as a server application to stream and 
 record specific channels. 
 
+http://www.rtl-sdr.com/ham2mon-a-nbfm-multi-channel-receiver-for-the-rtl-sdr/
+
+https://github.com/madengr/ham2mon
+
 This is still a work in progress. There is LOTS of opportunity for improvement
-in handling error cases or improving performance. Constructed comments always
+in handling error cases or improving overall useability. Constructed comments always
 appreciated. Special thanks to my orginal BETA (more like ALPHA) testers: KC2SJT,
 KC2SJU, and KC2VWI.
 
 DEPENDANCIES (lots I'm forgetting)
-- GNURADIO (I like to build from source) 
+- GNURADIO 
+- OSMOSDR
