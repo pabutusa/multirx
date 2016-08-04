@@ -179,7 +179,7 @@ class multirx_example(gr.top_block):
         def request_format(request, line_separator="\n"):
             return line_separator.join(["%s: %s" % (key, str(val)) for (key, val) in request.items()])
         
-        host = 'aws.pabut.org'
+        host = 'somehost.org'
         port = 8000
             
         logging.info("%s connecting %s:%d", key, host, port)
@@ -190,7 +190,7 @@ class multirx_example(gr.top_block):
             mountpoint,
             request_format({
                 'content-type': 'audio/mpeg',
-                'Authorization': 'Basic ' + b64encode("source:" + 'bigtruck'),
+                'Authorization': 'Basic ' + b64encode("source:" + 'password'),
                 'User-Agent': "multirx"
             }),
             request_format({
