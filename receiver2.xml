@@ -1,0 +1,27 @@
+<data>
+	<channel>
+		<description>Fire Response</description>
+		<key>fireresp</key>
+		<frequency>155.76</frequency>
+		<ctcss>162.2</ctcss>
+	</channel>
+	<channel>
+		<description>Police South</description>
+		<key>pdsouth</key>
+		<frequency>155.655</frequency>
+		<ctcss>85.4</ctcss>
+	</channel>
+	<channel>
+		<description>Police Central</description>
+		<key>pdcent</key>
+		<frequency>155.82</frequency>
+		<ctcss>131.8</ctcss>
+	</channel>
+	<channel>
+		<description>Police North East</description>
+		<key>pdnrthest</key>
+		<frequency>154.875</frequency>
+		<ctcss>167.9</ctcss>
+	</channel>
+</data>
+
