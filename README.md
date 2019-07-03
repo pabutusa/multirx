@@ -18,8 +18,8 @@ https://github.com/madengr/ham2mon
 
 This is still a work in progress. There is LOTS of opportunity for improvement
 in handling error cases or improving overall useability. Constructed comments always
-appreciated. Special thanks to my orginal BETA (more like ALPHA) testers: KC2SJT,
-KC2SJU, and KC2VWI.
+appreciated. Special thanks to my orginal BETA (more like ALPHA) testers: KG2F,
+K2CO, and K2RI.
 
 DEPENDANCIES (lots I'm forgetting)
 - GNURADIO 
