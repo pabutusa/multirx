@@ -1,27 +1,61 @@
 <data>
+	<system>
+		<serial>00000200</serial>
+		<gain>48</gain>
+		<freq_corr>70</freq_corr>
+		<save_dir>/var/www/html/wav</save_dir>
+		<ice_host>example.com</ice_host>
+		<ice_port>8000</ice_port>
+		<ice_auth>password</ice_auth>
+	</system>
+	<channel>
+		<description>XXXXXX</description>
+		<key>XXXXX</key>
+		<frequency>155.205</frequency>
+		<ctcss>0</ctcss>
+		<postscript>/home/user/sdr/multirx2/Recorder-post.bash</postscript>
+		<squelch>25</squelch>
+	</channel>
 	<channel>
 		<description>Fire Response</description>
 		<key>fireresp</key>
 		<frequency>155.76</frequency>
-		<ctcss>162.2</ctcss>
+		<ctcss>0</ctcss>
+		<postscript>/home/user/sdr/multirx2/Recorder-post.bash</postscript>
+		<squelch>25</squelch>
 	</channel>
+<!--
 	<channel>
 		<description>Police South</description>
 		<key>pdsouth</key>
 		<frequency>155.655</frequency>
 		<ctcss>85.4</ctcss>
 	</channel>
+-->
 	<channel>
 		<description>Police Central</description>
 		<key>pdcent</key>
 		<frequency>155.82</frequency>
-		<ctcss>131.8</ctcss>
+		<ctcss>0</ctcss>
+		<postscript>/home/user/sdr/multirx2/Recorder-post.bash</postscript>
+		<squelch>25</squelch>
 	</channel>
+<!--
 	<channel>
 		<description>Police North East</description>
 		<key>pdnrthest</key>
 		<frequency>154.875</frequency>
 		<ctcss>167.9</ctcss>
+		<postscript>/home/user/sdr/multirx2/Recorder-post.bash</postscript>
+		<squelch>35</squelch>
 	</channel>
+-->
+<!--
+	<channel>
+		<description>WC TAC 13</description>
+		<key>wctac13</key>
+		<frequency>154.325</frequency>
+		<ctcss>88.5</ctcss>
+	</channel>
+-->
 </data>
-

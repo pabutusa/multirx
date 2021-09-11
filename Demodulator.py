@@ -1,4 +1,4 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python3
 
 from gnuradio import analog
 from gnuradio import audio
@@ -31,7 +31,7 @@ class Demodulator(gr.hier_block2):
        self.variable_low_pass_filter_taps_0 = firdes.low_pass(1.0, 1, 0.090, 0.010, firdes.WIN_HAMMING, 6.76)
        self.variable_low_pass_filter_taps_1 = firdes.low_pass(1.0, samp_rate/25, 12.5E3, 1E3, firdes.WIN_HAMMING, 6.76)
        self.variable_low_pass_filter_taps_2 = firdes.low_pass(1.0, final_rate, 3500, 500, firdes.WIN_HAMMING, 6.76)
-       self.variable_band_pass_filter_taps_3 = firdes.band_pass(1.0, 16E3, 500, 3000, 100, firdes.WIN_HAMMING, 6.76)
+       self.variable_band_pass_filter_taps_3 = firdes.band_pass(1.0, 16E3, 300, 2800, 100, firdes.WIN_HAMMING, 6.76)
        self.squelch_dB = squelch_dB = -squelch
        self.ctcss_freq = tone
        self.ctcss_samp_rate = int(samp_rate/((self.initial_decim**2)*(samp_rate/1E6)))
@@ -58,7 +58,7 @@ class Demodulator(gr.hier_block2):
 
        self.pfb_arb_resampler_xxx_0 = \
            pfb.arb_resampler_fff(16E3/float(final_rate/5), taps=None, flt_size=32)
-       self.pfb_arb_resampler_xxx_0.declare_sample_delay(0)
+       #self.pfb_arb_resampler_xxx_0.declare_sample_delay(0)
        
        self.band_pass_filter = filter.fir_filter_fff(1, (self.variable_band_pass_filter_taps_3))
 
@@ -74,9 +74,9 @@ class Demodulator(gr.hier_block2):
        if self.ctcss_freq == 0:
           self.connect((self.quadrature_demod, 0), (self.fir_filter_2, 0))
        else:
-	  self.connect((self.quadrature_demod, 0), (self.analog_ctcss_squelch_0, 0))
-	  self.connect((self.analog_ctcss_squelch_0, 0), (self.fir_filter_2, 0))
-	  
+          self.connect((self.quadrature_demod, 0), (self.analog_ctcss_squelch_0, 0))
+          self.connect((self.analog_ctcss_squelch_0, 0), (self.fir_filter_2, 0))
+  
        self.connect((self.fir_filter_2, 0), (self.pfb_arb_resampler_xxx_0, 0))
        self.connect((self.pfb_arb_resampler_xxx_0, 0), (self.band_pass_filter, 0))
        self.connect((self.band_pass_filter, 0), (self.float_to_short, 0))
@@ -86,7 +86,7 @@ class examplerx(gr.top_block):
     def __init__(self):
         gr.top_block.__init__(self, "MULTIRX testing")
 
-        self.center_freq = 162475000
+        self.center_freq = 162400000
         self.squelch = -100
 
 
@@ -106,8 +106,8 @@ class examplerx(gr.top_block):
         self.osmosdr_source.set_antenna("", 0)
         self.osmosdr_source.set_bandwidth(samp_rate*0.8, 0)
 	
-	self.audio_sink = audio.sink(16000, "", True)
-	self.blocks_short_to_float = blocks.short_to_float(1, 32768)
+        self.audio_sink = audio.sink(16000, "", True)
+        self.blocks_short_to_float = blocks.short_to_float(1, 32768)
 
         self.demod_bb_freq = 0
         self.ctcss_freq = 0
@@ -120,10 +120,8 @@ if __name__ == '__main__':
    tb = examplerx()
    tb.start()
    try:
-      raw_input('Press Enter to quit: ')
+      input('Press Enter to quit: ')
    except EOFError:
       pass
    tb.stop()
    tb.wait()
-	    
-	    

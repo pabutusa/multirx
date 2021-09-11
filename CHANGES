@@ -1,0 +1,10 @@
+20210911 Maintenance Release
+
+Made some changes to make it more maintainable and configurable.
+
+Moved lots of settings that were hard coded to the XML file
+
+Squelch can be set per channel
+
+A separate postscript can be called per channel (i.e. TWO TONE decode or ID decode)
+
